@@ -1,0 +1,62 @@
+﻿<Window x:Class="BearTT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BearTT" Height="600" Width="700" MinWidth="600" MinHeight="350" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition MaxWidth="500" MinWidth="400" Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.ColumnSpan="7" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button  Grid.Column="0" x:Name="btn_Reload" Width="77" Margin="10,10,3,0" Click="btn_Reload_Click" Content="LoadFile" Height="24" VerticalAlignment="Top" />
+                <TextBox Grid.Column="1" Margin="10,10,3,7"  x:Name="txt_TargetFilePath"  />
+            </Grid>
+            <Button x:Name="btn_AddTarget" Grid.Row="1" Content="AddTarget" HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" VerticalAlignment="Top" Width="77" Click="btn_AddTarget_Click"/>
+            <Button x:Name="btn_DeleteTarget" Grid.Row="1" Content="DeleteTarget" Grid.Column="1"  Height="24" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="77" Click="btn_DeleteTarget_Click"/>
+            <Button x:Name="btn_SaveTarget" Grid.Row="1" Content="SaveTarget" Grid.Column="2"  Height="24" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="77" Click="btn_SaveTarget_Click"/>
+            <CheckBox x:Name="ch_AutoSave" Grid.Row="1" Content="AutoSaveTarget" Grid.Column="3"  Height="24" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Width="105" IsChecked="True" />
+
+            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="107"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+                <Button  Grid.Column="0" x:Name="btn_Start" Width="77" Margin="10,10,3,0" Click="btn_Start_Click" Content="Start" Height="24" VerticalAlignment="Top" />
+                <TextBlock Grid.Column="1" Margin="10,10,0,7"  Text="ThreadCount/Rate"  />
+                <TextBox Grid.Column="2" Margin="5,10,3,7"  x:Name="txt_ThreadCount" Text="40"  />
+                <!--<TextBlock Grid.Column="3" Margin="10,10,0,7"  Text="Rate"  />
+                <TextBox Grid.Column="4" Margin="5,10,3,7"  x:Name="txt_Time" Text="10"  />-->
+            </Grid>
+            
+        </Grid>
+
+
+        <DataGrid x:Name="dg_tt" Margin="5" MouseDoubleClick="ttData_MouseDoubleClick" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False"  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="80" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Target" Width="200*" Binding="{Binding Target}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
