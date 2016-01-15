@@ -21,7 +21,7 @@ namespace BearTT.Entity
 
         public bool HoldFlag = true;
 
-        ILog log = LogManager.GetLogger("loginfo");
+        //ILog log = LogManager.GetLogger("loginfo");
 
         public void ToTarget(object o)
         {
@@ -51,17 +51,16 @@ namespace BearTT.Entity
                 {
                     strValue += StrDate + "\r\n";
                 }
-                Console.WriteLine(strValue);
+                //Console.WriteLine(strValue);
 
 
-                string dateDiff = null;
-                TimeSpan ts1 = new TimeSpan(DateTime.Now.Ticks);
-                TimeSpan ts2 = new TimeSpan(startDateTime.Ticks);
-                TimeSpan ts = ts1.Subtract(ts2).Duration();
-                //dateDiff = ts.Days.ToString() + "天" + ts.Hours.ToString() + "小时" + ts.Minutes.ToString() + "分钟" + ts.Seconds.ToString() + "秒";
-                dateDiff = ts.Hours.ToString() + "时" + ts.Minutes.ToString() + "分" + ts.Seconds.ToString() + "秒" + ts.Milliseconds.ToString() + "MS";
+                //string dateDiff = null;
+                //TimeSpan ts1 = new TimeSpan(DateTime.Now.Ticks);
+                //TimeSpan ts2 = new TimeSpan(startDateTime.Ticks);
+                //TimeSpan ts = ts1.Subtract(ts2).Duration();
+                //dateDiff = ts.Hours.ToString() + "时" + ts.Minutes.ToString() + "分" + ts.Seconds.ToString() + "秒" + ts.Milliseconds.ToString() + "MS";
 
-                log.Info(dateDiff+"    Name: "+this.Name+"    result: "+strValue);
+                //log.Info(dateDiff+"    Name: "+this.Name+"    result: "+strValue);
             }
         }
     }

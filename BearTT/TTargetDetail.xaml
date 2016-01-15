@@ -29,9 +29,9 @@
             <Button Height="23"  Margin="5,5,5,0" Grid.Column="1" Content="Cancel"  x:Name="btn_Cancel" Click="btn_Cancel_Click"/>
         </Grid>
         <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Left"  Height="{Binding Path=(ActualHeight),ElementName=g_tt}" VerticalContentAlignment="Center"   Width="{Binding Path=(ActualWidth),ElementName=g_tt}"   TextWrapping="Wrap"  />
-        <TextBox x:Name="txtTarget" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"  Height="{Binding Path=(ActualHeight),ElementName=g_tt}" VerticalContentAlignment="Center"  Width="{Binding Path=(ActualWidth),ElementName=g_tt}"    TextWrapping="Wrap" />
-        <TextBox x:Name="txtHttpMethod" Text="POST" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"  Height="{Binding Path=(ActualHeight),ElementName=g_tt}" VerticalContentAlignment="Center"  Width="{Binding Path=(ActualWidth),ElementName=g_tt}"  TextWrapping="Wrap" />
-        <TextBox x:Name="txtParam" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left"  Height="{Binding Path=(ActualHeight),ElementName=g_tt}" VerticalContentAlignment="Center"  Width="{Binding Path=(ActualWidth),ElementName=g_tt}"   TextWrapping="Wrap"  />
+        <TextBox x:Name="txtTarget"  Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"  Height="{Binding Path=(ActualHeight),ElementName=g_tt}" VerticalContentAlignment="Center"  Width="{Binding Path=(ActualWidth),ElementName=g_tt}"    TextWrapping="Wrap" />
+        <TextBox x:Name="txtHttpMethod"   Text="POST" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"  Height="{Binding Path=(ActualHeight),ElementName=g_tt}" VerticalContentAlignment="Center"  Width="{Binding Path=(ActualWidth),ElementName=g_tt}"  TextWrapping="Wrap" />
+        <TextBox x:Name="txtParam" AcceptsReturn="True" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left"  Height="{Binding Path=(ActualHeight),ElementName=g_tt}" VerticalContentAlignment="Center"  Width="{Binding Path=(ActualWidth),ElementName=g_tt}"   TextWrapping="Wrap"  />
         <TextBox x:Name="txtOrder" Text="99" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left"  Height="{Binding Path=(ActualHeight),ElementName=g_tt}" VerticalContentAlignment="Center" Width="{Binding Path=(ActualWidth),ElementName=g_tt}"  TextWrapping="Wrap"  />
 
     </Grid>

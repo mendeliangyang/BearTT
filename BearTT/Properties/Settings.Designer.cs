@@ -34,10 +34,28 @@ namespace BearTT.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        public int DefaultThreadCount {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoSaveBearConf {
             get {
-                return ((int)(this["DefaultThreadCount"]));
+                return ((bool)(this["AutoSaveBearConf"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoStartBear {
+            get {
+                return ((bool)(this["AutoStartBear"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int DefaultBearRate {
+            get {
+                return ((int)(this["DefaultBearRate"]));
             }
         }
     }

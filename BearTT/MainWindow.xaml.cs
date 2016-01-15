@@ -36,12 +36,13 @@ namespace BearTT
 
         private void init()
         {
+            this.ch_AutoSave.IsChecked = Properties.Settings.Default.AutoSaveBearConf;
             memberData = new ObservableCollection<TTarget>();
             Stream fStream = null;
             try
             {
                 string fileName = this.txt_TargetFilePath.Text.Trim();
-                fStream = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite);
+                fStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
                 fStream.Position = 0;
                 XmlSerializer xmlFormat = new XmlSerializer(typeof(ObservableCollection<TTarget>), new Type[] { typeof(TTarget) });
                 memberData = (ObservableCollection<TTarget>)xmlFormat.Deserialize(fStream);
@@ -60,6 +61,12 @@ namespace BearTT
             }
             //memberData.Add(new TTarget() { Name = "n0", Target = "t0", Param = "p0", HttpMethod = "get" });
             dg_tt.DataContext = memberData;
+            this.txt_ThreadCount.Text = Properties.Settings.Default.DefaultBearRate.ToString();
+            cbAutoStart.IsChecked=Properties.Settings.Default.AutoStartBear;
+            if (Properties.Settings.Default.AutoStartBear)
+            {
+                btn_Start_Click(null,null);
+            }
         }
 
         private void ttData_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -179,7 +186,7 @@ namespace BearTT
                 this.btn_Start.Content = "Stop";
                 int rate = 0;
                 bool rateFlag = int.TryParse(this.txt_ThreadCount.Text.Trim(), out rate);
-                rate = rateFlag == true ? rate : Properties.Settings.Default.DefaultThreadCount;
+                rate = rateFlag == true ? rate : Properties.Settings.Default.DefaultBearRate;
                 ThreadPool.SetMaxThreads(rate, rate);
 
 
@@ -203,6 +210,11 @@ namespace BearTT
 
 
 
+        }
+
+        private void cbAutoStart_Click(object sender, RoutedEventArgs e)
+        {
+           // Properties.Settings.Default.AutoStartBear = cbAutoStart.IsChecked;
         }
 
     }

@@ -48,6 +48,7 @@
                 <!--<TextBlock Grid.Column="3" Margin="10,10,0,7"  Text="Rate"  />
                 <TextBox Grid.Column="4" Margin="5,10,3,7"  x:Name="txt_Time" Text="10"  />-->
             </Grid>
+            <CheckBox Grid.Row="3" Grid.ColumnSpan="7" Margin="10,10,0,7"  Content="AutoStartBear"  x:Name="cbAutoStart" Click="cbAutoStart_Click" />
             
         </Grid>
 
